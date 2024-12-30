@@ -1,0 +1,121 @@
+---
+title: Legal information
+description: S-Corp in Wyoming under the name Arthur Labs, Inc.
+---
+
+# How Arthur Labs uses Blockchains
+
+At Arthur Labs, we've integrated blockchain technology into our Digital Commerce Marketplace to provide secure, transparent, and efficient transaction processing. Here's a detailed look at how we utilize blockchain technology.
+
+## Transaction Processing
+
+### Receipt Generation
+Every transaction in our marketplace automatically generates:
+- An immutable blockchain record
+- A unique transaction hash
+- Timestamp and transaction details
+- Buyer and seller wallet addresses
+
+### Smart Contract Implementation
+Our marketplace uses smart contracts to:
+- Automate payment processing
+- Ensure secure escrow services
+- Trigger automatic releases of funds
+- Handle dispute resolution mechanisms
+
+## Cryptocurrency Payments
+
+### Supported Cryptocurrencies
+We currently accept:
+- Ethereum (ETH)
+- Wrapped Bitcoin (WBTC)
+- USDC Stablecoin
+- Other ERC-20 tokens
+
+### Payment Flow
+1. **Buyer Initiates Purchase**
+   - Selects product/service
+   - Chooses cryptocurrency for payment
+   - Confirms transaction in wallet
+
+2. **Smart Contract Processing**
+   - Validates cryptocurrency balance
+   - Holds funds in escrow
+   - Verifies transaction completion
+
+3. **Settlement**
+   - Releases funds to seller
+   - Generates blockchain receipt
+   - Updates marketplace records
+
+## Security Features
+
+### Transaction Security
+- Multi-signature wallet requirements
+- Automated security checks
+- Rate limiting for large transactions
+- Real-time fraud detection
+
+### Wallet Integration
+We provide:
+- Secure wallet connections
+- Multiple wallet support
+- Easy-to-use interfaces
+- Transaction status tracking
+
+## Benefits for Users
+
+### For Buyers
+- Secure payment processing
+- Transaction transparency
+- Dispute protection
+- Permanent receipt records
+
+### For Sellers
+- Instant payment settlement
+- Lower transaction fees
+- Fraud protection
+- Automated bookkeeping
+
+## Technical Implementation
+
+```solidity
+// Example of our basic transaction smart contract
+contract ArthurLabsMarketplace {
+    mapping(bytes32 => Transaction) public transactions;
+
+    struct Transaction {
+        address buyer;
+        address seller;
+        uint256 amount;
+        bool completed;
+        uint256 timestamp;
+    }
+
+    function processPurchase(address seller) public payable {
+        bytes32 txHash = keccak256(abi.encodePacked(msg.sender, seller, msg.value, block.timestamp));
+        transactions[txHash] = Transaction(msg.sender, seller, msg.value, false, block.timestamp);
+        // Additional processing logic
+    }
+}
+```
+
+## Best Practices
+
+When using our blockchain-powered marketplace:
+1. Always verify transaction details
+2. Keep your wallet credentials secure
+3. Monitor transaction status
+4. Maintain records of transaction hashes
+
+## Future Developments
+
+We're working on:
+- Layer 2 scaling solutions
+- Additional cryptocurrency support
+- Enhanced smart contract features
+- Improved transaction monitoring
+
+## Questions?
+
+For technical support or questions about our blockchain implementation, please contact our support team or visit our developer documentation.
